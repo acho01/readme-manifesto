@@ -19,6 +19,13 @@ A brief description of what the project does and its purpose.
 - **Databases**: List of databases used
 - **Others**: Any other tech components
 
+## Pre-requisites
+List of specific versions of software artifacts to have set up, to be able to start "Installation Guide" step. Examples:
+- node v20.0
+- docker v7.2.1
+- docker-compose v6.1.0
+etc
+
 ## Installation Guide
 1. **Clone the repository**: `git clone https://github.com/yourusername/yourproject.git`
 2. **Navigate to the directory**: `cd yourproject`
