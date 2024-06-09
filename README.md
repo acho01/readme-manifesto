@@ -33,7 +33,7 @@ List of specific versions of software artifacts to have set up to be able to ins
 5. **Others**: Any other installation step
 
 ## Running the Project Locally
-1. **Start the development server**: something like `npm start`
+1. **Start the development server**: something like `npm run start`
 2. **Access the application**: `http://localhost:3000` or relevant URL
 3. **Others**: Any other running step
 
