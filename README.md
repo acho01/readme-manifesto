@@ -20,13 +20,10 @@ A brief description of what the project does and its purpose.
 - **Others**: Any other tech components
 
 ## Pre-requisites
-List of specific versions of software artifacts to have set up to be able to install & run project locally. 
-`
-For example:
-    - node v20.0
-    - docker v7.2.1
-    - docker-compose v6.1.0
-`
+List of specific versions of software artifacts to have set up to be able to install & run project locally. For example:
+- node v20.0
+- docker v7.2.1
+- docker-compose v6.1.0
 
 ## Installation Guide
 1. **Clone the repository**: `git clone https://github.com/yourusername/yourproject.git`
