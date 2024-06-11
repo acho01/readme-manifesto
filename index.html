@@ -34,7 +34,6 @@
         z-index: 1;
         height: 100%;
         overflow-y: auto;
-
     }
     pre {
         position: relative;
@@ -48,6 +47,21 @@
         color: white;
         border: none;
         cursor: pointer;
+    }
+    .tab {
+        cursor: pointer;
+        padding: 10px;
+        background: #ddd;
+        display: inline-block;
+        margin-right: 5px;
+        border-radius: 5px 5px 0 0;
+    }
+    .tab-content {
+        display: none;
+        border-top: none;
+    }
+    .tab-content.active {
+        display: block;
     }
 </style>
 </head>
@@ -72,7 +86,13 @@
         </font>
         <br><br>
         
-        <pre style="background:white; border-radius: 7px;"><button style="border-radius: 5px;" class="copy-button" data-clipboard-target="#code">Copy</button><code id="code" class="language-json">
+        <div id="tabs">
+            <div class="tab" onclick="showContent(0)">Default README</div>
+            <!-- Add more tabs as needed -->
+        </div>
+        <div id="tab-contents">
+            <div class="tab-content" id="tab-content-0">
+                <pre style="background:white; border-radius: 7px;"><button class="copy-button" data-clipboard-target="#code-0">Copy</button><code id="code-0" class="language-md">
 # Project Name
 
 ## Description
@@ -85,6 +105,13 @@ A brief description of what the project does and its purpose.
 - **Databases**: List of databases used
 - **Others**: Any other tech components
 
+## Pre-Requisites
+List of specific versions of software artifacts to have set up to be able to 
+install & run project locally. For example:
+- node v20.0
+- docker v7.2.1
+- docker-compose v6.1.0            
+
 ## Installation Guide
 1. **Clone the repository**: `git clone https://github.com/yourusername/yourproject.git`
 2. **Navigate to the directory**: `cd yourproject`
@@ -93,7 +120,7 @@ A brief description of what the project does and its purpose.
 5. **Others**: Any other installation step
 
 ## Running the Project Locally
-1. **Start the development server**: something like `npm start`
+1. **Start the development server**: something like `npm run start`
 2. **Access the application**: `http://localhost:3000` or relevant URL
 3. **Others**: Any other running step
 
@@ -102,9 +129,11 @@ A brief description of what the project does and its purpose.
 - **API Documentation**: Details of API endpoints
 - **Functional Flow**: Details of business logic flows in application
 
+                </code></pre>
+            </div>
+            <!-- Add more tab-contents as needed -->
+        </div>
 
-</code></pre>
-        
         <br><br>
     </div>
     <div>
@@ -117,6 +146,23 @@ A brief description of what the project does and its purpose.
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 <script>
     new ClipboardJS('.copy-button');
+
+    function showContent(index) {
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabContents.forEach((content, i) => {
+            content.classList.toggle('active', i === index);
+        });
+
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === index);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Show the first tab by default
+        showContent(0);
+    });
 </script>
 </body>
 </html>
